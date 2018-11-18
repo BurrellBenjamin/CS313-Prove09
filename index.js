@@ -9,6 +9,6 @@ constapp = express()
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-app.url('/', function (req, res) {
+app.url('/index', function (req, res) {
     res.send('index.html');
 })
