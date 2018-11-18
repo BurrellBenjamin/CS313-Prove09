@@ -10,28 +10,30 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('public/index.html'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 app.get('/results.ejs?', function (req, res){
-    echo(req);
-    res.render('pages/results.ejs')
+    var price = calculateRate(req.query['type'],req.query['weight']);
+    var weight = req.query['weight'];
+    var type = req.query['type'];
+    res.render('pages/results.ejs', {price: price, weight: weight, type: type});
 })
 
 function calculateRate(mailType, weight){
     var price = 0;
     switch(mailType){
-        case "stamped":{
+        case "stamped letter":{
             price += .50;
             if (weight > (1/16)){
                 price += (weight -1 ) * .21;
             }
             break;
         }
-        case "metered":{
+        case "metered letter":{
             price += .47;
             if (weight > (1/16)){
                 price += (weight - 1) * .21;
             }
             break;
         }
-        case "flats":{
+        case "large envelope":{
             price += 1.00;
             if (weight > (1/16)){
                 price += (weight - 1) * .21;
