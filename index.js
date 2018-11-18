@@ -8,7 +8,4 @@ const app = express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-app.get('/index', function (req, res) {
-    res.send('index.html');
-})
+  .get('/index', (req, res) => res.render('index.html'))
