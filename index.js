@@ -9,6 +9,6 @@ const app = express()
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-app.url('/index', function (req, res) {
+app.get('/index', function (req, res) {
     res.send('index.html');
 })
