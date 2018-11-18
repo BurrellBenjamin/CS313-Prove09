@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prove 09-Postage Calculator</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Postal Rate Calculator</h1>
+        <hr>
+        
+        <form action='results.ejs' method="get">
+            <label>Weight of item to be mailed (in pounds):</label>
+            <br>
+            <input type="number" name='weight'>
+            <label>lbs.</label>
+            <hr>
+            <input type="radio" name='type' value="stamped">
+            <label>Letters (Stamped)</label><br>
+            <input type="radio" name='type' value="metered">
+            <label>Letters (Metered)</label><br>
+            <input type="radio" name='type' value="flats">
+            <label>Large Envelopes (Stamped)</label><br>
+            <input type="radio" name='type' value="package">
+            <label>First-Class Package Service-Retail</label><br>
+            <hr>
+            <input type="submit" value="Mail it!">
+        </form>
+    </body>
+</html>
